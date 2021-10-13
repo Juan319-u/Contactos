@@ -1,6 +1,6 @@
 '''Este  codigo  imita la aplicacion de contactos
 Autor : Juan  Felipe  Corrales  Toro
-ULTIMA  ACTUALIZACION : 04  de  Octubre  /  2021'''
+ULTIMA  ACTUALIZACION : 12  de  Octubre  /  2021'''
 contactos={}#abrimos una diccionario vacio
 opciones=""
 
@@ -15,6 +15,17 @@ while opciones !="4":#usamos un while para que la "app" de contactos se cierre c
             nombre =input("ingrese el nombre del contacto ")
         if nombre in contactos:
             print("este contacto ya existe")
+            opcion=input("quieres modificarlo si/no?")
+            if opcion=="si":
+                telefono =input("ingrese el numero del contacto ")
+                while telefono=="":
+                    print("no puede estar vacio")
+                    telefono =input("ingrese el numero del contacto ")
+                contactos[nombre]=int(telefono)#ingresamos el resultado al diccionario
+                print("se guardo con exito el contacto de ",nombre)
+            else:
+                print("el contacto ",nombre," quedo igual")
+                print(contactos[nombre])
         else:
             telefono =input("ingrese el numero del contacto ")
             while telefono=="":
