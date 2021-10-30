@@ -1,8 +1,9 @@
 '''Este  codigo  imita la aplicacion de contactos
 Autor : Juan  Felipe  Corrales  Toro
-ULTIMA  ACTUALIZACION : 12  de  Octubre  /  2021'''
-contactos={}#abrimos una diccionario vacio
+ULTIMA  ACTUALIZACION : 25  de  Octubre  /  2021'''
 opciones=""
+contactos={}
+
 
 while opciones !="4":#usamos un while para que la "app" de contactos se cierre cuando el usuario lo pida
     opciones=input("menu\n (1)agregar\n (2)mostrar\n (3)eliminar\n (4)terminar\n")#menu
@@ -54,3 +55,8 @@ while opciones !="4":#usamos un while para que la "app" de contactos se cierre c
                 print("este contacto fue eliminado con exito")
             else:
                 print("este contacto no existe")
+    
+
+    if opciones=="4":
+        with open('contactos.txt', 'w') as archivo:
+            archivo.write(str(contactos))
